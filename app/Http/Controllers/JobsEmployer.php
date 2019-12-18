@@ -42,9 +42,10 @@ class JobsEmployer extends Controller
 
     public function create_job(Request $request){
 
-        $data['sub_heading']  = 'Job Detail';
-        $data['page_title']   = 'Job detail page';
-        $data['Jobs']         = JobsTable::where("user_id", Auth::user()->id)->orderBy('id','ASC')->get();
+        $data['sub_heading']  = 'Job Post';
+        $data['page_title']   = 'Job Post';
+        $data['catres']        =  Category::paginate(100);
+        $data['locres']        =  CreateLocationTable::paginate(100);
 
         return view('privateuser.employer_create_job', $data);
     }

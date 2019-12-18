@@ -36,13 +36,13 @@
         </div>
       </div>
         <div class="form-line">
-          <label>First Name <span>*</span></label>
+          <label>Job Title <span>*</span></label>
           <div class="field-container">
             <input type="text" value="{{ @$rules->page_title}}" name="page_title" id="page_title" placeholder="Page Title" required>
           </div>
         </div>
         <div class="form-line">
-          <label>Page Content <span>*</span></label>
+          <label>Job Content <span>*</span></label>
           <div class="field-container">
             <textarea name="content" class="summernote">{{ @$rules->content}}</textarea>
           </div>
