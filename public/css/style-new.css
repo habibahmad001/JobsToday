@@ -291,7 +291,7 @@ p.congrats img{ position: absolute; right: -120px; top: -50px; }
 
 /*-------------------Footer Starts Here-----------------*/
 
-footer{ background:#ebebeb; padding:9px 0px; width:100%; position:absolute; bottom:0; }
+footer{ background:#ebebeb; padding:9px 0px; width:100%; bottom:0; }
 footer p.copyrights{ text-align:center; font-size:14px; line-height: 22px; padding:0 15px; }
 
 /*-------------Media Querries-----------------*/
