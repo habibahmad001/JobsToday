@@ -13,6 +13,7 @@ use App\Category;
 use App\JobsTable;
 use App\CreateLocationTable;
 use Auth;
+use Validator;
 
 //Enables us to output flash messaging
 use Session;
@@ -20,7 +21,7 @@ use Session;
 class JobsEmployer extends Controller
 {
     public function __construct() {
-//      $this->middleware('employer');
+      $this->middleware('employer');
     }
     
     public function index(Request $request){

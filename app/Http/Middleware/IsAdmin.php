@@ -18,9 +18,9 @@ class IsAdmin
     public function handle($request, Closure $next)
     {
          if (Auth::user() &&  Auth::user()->user_type == 'admin') {
-
                 return $next($request);
-         } else if(Auth::user() &&  Auth::user()->user_type == 'employee') {
+         }
+         else if(Auth::user() &&  Auth::user()->user_type == 'employee') {
              return redirect('/employee');
          } else if(Auth::user() &&  Auth::user()->user_type == 'employer') {
              return redirect('/employer');

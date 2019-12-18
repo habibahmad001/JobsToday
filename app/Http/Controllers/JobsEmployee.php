@@ -13,6 +13,8 @@ use App\Category;
 use App\JobsTable;
 use App\CreateLocationTable;
 use Auth;
+use Validator;
+use Illuminate\Support\Facades\Hash;
 
 //Enables us to output flash messaging
 use Session;
@@ -20,7 +22,7 @@ use Session;
 class JobsEmployee extends Controller
 {
     public function __construct() {
-//      $this->middleware('employee');
+      $this->middleware('employee');
     }
 
     public function index(Request $request){

@@ -17,7 +17,7 @@ class IsEmployee
 
     public function handle($request, Closure $next)
     {
-         if (Auth::user() &&  Auth::user()->user_type == 'user') {
+         if (Auth::user() &&  Auth::user()->user_type == 'employee') {
 
                 return $next($request);
          }

@@ -17,7 +17,7 @@ class IsEmployer
 
     public function handle($request, Closure $next)
     {
-         if (Auth::user() &&  Auth::user()->user_type == 'publisher') {
+         if (Auth::user() &&  Auth::user()->user_type == 'employer') {
 
                 return $next($request);
          }

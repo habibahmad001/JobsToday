@@ -32,13 +32,15 @@
         </header>
         <section class="menu-section">
             <ul class="menu-ul">
-                @if(Auth::user()->user_type == "employee")
-                    <li><a href="/employee_listing/">Jobs Listing Page</a></li>
-                    <li><a href="/logout/">Logout</a></li>
-                @elseif(Auth::user()->user_type == "employer")
-                    <li><a href="/employer_listing/">Jobs Listing Page</a></li>
-                    <li><a href="/create_job/">Create New Job</a></li>
-                    <li><a href="/logout/">Logout</a></li>
+                @if(Auth::user())
+                    @if(Auth::user()->user_type == "employee")
+                        <li><a href="/employee_listing/">Jobs Listing Page</a></li>
+                        <li><a href="/logout/">Logout</a></li>
+                    @elseif(Auth::user()->user_type == "employer")
+                        <li><a href="/employer_listing/">Jobs Listing Page</a></li>
+                        <li><a href="/create_job/">Create New Job</a></li>
+                        <li><a href="/logout/">Logout</a></li>
+                    @endif
                 @else
                     <li><a href="/">Home</a></li>
                     <li><a href="/jobs/">Jobs</a></li>
