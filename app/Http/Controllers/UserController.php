@@ -35,7 +35,7 @@ class UserController extends Controller {
       
         $data['sub_heading']  = 'Users';
         $data['page_title']   = 'Super Quiz Users';
-        $data['users']        =  User::where('user_type','user')->paginate(10);
+        $data['users']        =  User::where('user_type','user')->orwhere('user_type', 'employee')->orwhere('user_type', 'employer')->paginate(10);
         return view('users/index', $data);
     }
 

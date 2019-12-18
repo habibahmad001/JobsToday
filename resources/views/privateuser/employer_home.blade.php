@@ -3,7 +3,7 @@
         window.location.href = "/logout";
     </script>
 @endif
-@extends('layouts.reset')
+@extends('layouts.demo')
 
 @section('content')
     <div class="container">

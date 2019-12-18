@@ -146,3 +146,7 @@ Route::post('/search', "JobsController@search")->name('search');
 Route::get('/home', function () {
     return view('welcome');
 });
+
+Route::get('/get-started', function () {
+    return view('demo');
+});
