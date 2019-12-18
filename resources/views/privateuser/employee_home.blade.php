@@ -1,3 +1,8 @@
+@if(Auth::user()->status == "active")
+    <script lang="javascript">
+        window.location.href = "/logout";
+    </script>
+@endif
 @extends('layouts.reset')
 
 @section('content')

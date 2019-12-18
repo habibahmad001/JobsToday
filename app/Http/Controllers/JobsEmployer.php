@@ -49,6 +49,54 @@ class JobsEmployer extends Controller
 
         return view('privateuser.employer_create_job', $data);
     }
+
+    public function emp_c_j(Request $request){
+
+        $this->validate($request, [
+
+            'page_title'=>'required',
+            'content'=>'required',
+            'cat_id'=>'required',
+            'where'=>'required'
+
+        ]);
+
+        if(!empty($request->page_id)){
+
+            $rules              = JobsTable::find($request->page_id);
+            $rules->job_title  = $request->page_title;
+            $rules->job_desc     = $request->content;
+            $rules->category_id  = $request->cat_id;
+            $rules->where         = $request->where;
+            $rules->user_id       = Auth::user()->id;
+            $saved              = $rules->save();
+            if ($saved) {
+                $request->session()->flash('message', 'Page has been successful edited!');
+                return redirect('employer_listing');
+            } else {
+                return redirect()->back()->with('error', 'Error while edit the page');
+            }
+        }else{
+
+            $rules              = new JobsTable;
+            $rules->job_title  = $request->page_title;
+            $rules->job_desc     = $request->content;
+            $rules->category_id  = $request->cat_id;
+            $rules->where         = $request->where;
+            $rules->user_id       = Auth::user()->id;
+            $saved              = $rules->save();
+            if ($saved) {
+                $request->session()->flash('message', 'Page successfully added!');
+                return redirect('employer_listing');
+            } else {
+                return redirect()->back()->with('message', 'Couldn\'t create Page!');
+            }
+        }
+
+
+
+    }
+
     public function create(){
         //
     }

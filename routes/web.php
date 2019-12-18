@@ -127,6 +127,7 @@ Route::get('/employee_listing', "JobsEmployee@employee_listing");
 Route::get('/employer', "JobsEmployer@index");
 Route::get('/employer_listing', "JobsEmployer@employer_listing");
 Route::get('/create_job', "JobsEmployer@create_job");
+Route::post('/emp_c_j', "JobsEmployer@emp_c_j");
 /*___________________Public Routs______________________________*/
 Route::get('/contactus', function () {
     return view('contactus');

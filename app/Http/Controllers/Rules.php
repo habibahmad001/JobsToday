@@ -115,7 +115,7 @@ class Rules extends Controller
             'cat_id'=>'required',
             'where'=>'required'
 
-        ]); 
+        ]);
 
         if(!empty($request->page_id)){
 
@@ -124,6 +124,7 @@ class Rules extends Controller
           $rules->job_desc     = $request->content;
           $rules->category_id  = $request->cat_id;
           $rules->where         = $request->where;
+          $rules->user_id       = Auth::user()->id;
           $saved              = $rules->save(); 
           if ($saved) {
            $request->session()->flash('message', 'Page has been successful edited!');
@@ -138,6 +139,7 @@ class Rules extends Controller
           $rules->job_desc     = $request->content;
           $rules->category_id  = $request->cat_id;
           $rules->where         = $request->where;
+          $rules->user_id       = Auth::user()->id;
           $saved              = $rules->save();
           if ($saved) {
            $request->session()->flash('message', 'Page successfully added!');

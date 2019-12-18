@@ -547,4 +547,15 @@ div#search-result {
  float: left;
  vertical-align: top;
 }
+.frm-employer input {
+  outline: none;
+  box-shadow: none;
+  border-color: #d7d7d7;
+  border-radius: 2px;
+  border: 1px solid #d7d7d7;
+  width: 100%;
+  padding: 1.5%;
+  margin: 1% 0;
+}
+
 /*---------- Menu CSS ----------- */
