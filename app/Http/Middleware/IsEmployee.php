@@ -22,6 +22,6 @@ class IsEmployee
                 return $next($request);
          }
 
-        return redirect('/employee');
+        return redirect('/employee_listing');
     }
 }

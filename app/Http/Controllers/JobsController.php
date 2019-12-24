@@ -108,6 +108,36 @@ class JobsController extends Controller
 
     }
 
+    public function contact_us(Request $request){
+        $data['sub_heading']  = 'Contact us';
+        $data['page_title']   = 'Contact page';
+
+        return view('contactus', $data);
+    }
+
+    public function email_form(Request $request){
+
+        $data['sub_heading']  = 'Contact us';
+        $data['page_title']   = 'Contact page';
+        $data['message']   = "Email has been send Successfully !!";
+
+        $to_email = 'hr@batraining.org.uk';
+        $subject = 'Email from JobsToday !!!';
+        $message = 'Please have a look on the following information.<br /><br />';
+        $message .= 'Name:' . $request->name . '<br />';
+        $message .= 'Email:' . $request->email . '<br />';
+        $message .= 'Phone No:' . $request->pno . '<br />';
+        $message .= 'Message:' . $request->msg . '<br /><br />';
+        $message .= 'Thanks & Regards' . '<br />';
+        $message .= 'JobsToday.com';
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        $headers .= 'From: habibahmad001@gmail.com';
+        @mail($to_email,$subject,$message,$headers);
+
+        return view('contactus', $data);
+    }
+
 
     public function create(){
         //

@@ -14,13 +14,18 @@
                     Email: support@globaledulink.co.uk <br />
                 </div>
                 <div class="contact-form-section">
-                    <form name="cfrm" id="cfrm" method="post">
+                    @if(isset($message))
+                    <div class="msgg">
+                        {{ $message }}
+                    </div>
+                    @endif
+                    <form name="cfrm" id="cfrm" method="post" action="/email_form">
                         {{ csrf_field() }}
                         <input type="text" name="name" class="search-what" id="name" placeholder="Name"> <br />
                         <input type="email" name="email" class="search-what" id="email" placeholder="Email"> <br />
                         <input type="text" name="pno" class="search-what" id="pno" placeholder="123-456-7891"> <br />
-                        <textarea name="msg" id="msg">Message</textarea> <br />
-                        <input type="button" name="contact-submit" class="contact-submit" id="contact-submit" value="Submit"> <br />
+                        <textarea name="msg" id="msg" placeholder="Message"></textarea> <br />
+                        <input type="button" onclick="javascript: document.getElementById('cfrm').submit();" name="contact-submit" class="contact-submit" id="contact-submit" value="Submit"> <br />
                     </form>
 
                 </div>

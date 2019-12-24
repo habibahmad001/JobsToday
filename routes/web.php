@@ -127,9 +127,9 @@ Route::middleware(['employer'])->group(function () {
 });
 
 /*___________________Public Routs______________________________*/
-Route::get('/contactus', function () {
-    return view('contactus');
-});
+Route::get('/contactus', "JobsController@contact_us");
+Route::post('/email_form', "JobsController@email_form");
+
 Route::get('/jobs', "JobsController@index");
 Route::get('/alljobs/{id}', "JobsController@catjobs");
 Route::get('/jobdetail/{id}', "JobsController@jobdetail");

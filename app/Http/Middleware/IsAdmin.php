@@ -21,9 +21,9 @@ class IsAdmin
                 return $next($request);
          }
          else if(Auth::user() &&  Auth::user()->user_type == 'employee') {
-             return redirect('/employee');
+             return redirect('/employee_listing');
          } else if(Auth::user() &&  Auth::user()->user_type == 'employer') {
-             return redirect('/employer');
+             return redirect('/employer_listing');
          }
         return redirect('/dashboard');
     }
